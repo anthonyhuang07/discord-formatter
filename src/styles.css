@@ -37,20 +37,12 @@ main{
     color: #a2ddff;
     text-decoration: none;
     transition: text-shadow 0.3s;
-} main ul{
-    font-family: 'JetBrains Mono', 'Helvetica Neue', sans-serif;
-    font-size: 1.4em;
-    width: 90%;
-    list-style-position: inside;
-    margin: auto;
 } main h2{
     font-family:'Aldrich', Helvetica, sans-serif;
     margin: 15px;
     font-size: 1.75em;
 } main a:hover{
-    text-shadow: 0 0 5px #4b93ff;
-} main img{
-    padding: 1.5rem;
+    text-shadow: 0 0 5px #5663F7;
 } main hr{
     margin: auto;
     margin-top: 3rem;
@@ -106,12 +98,6 @@ article{
     padding: 2rem 0 2rem 0rem;
     width: 90%;
     border-radius: 2rem;
-} article ul{
-    color: #eaeaea;
-    margin: auto;
-    line-height: 30px;
-    list-style-position: inside;
-    font-size: 1.5em;
 } article p{
     margin: auto;
     text-align: center;
@@ -154,21 +140,6 @@ button{
     background-color:#420000 !important;
 } .copyButton:hover{
     background-color:#0c4200 !important;
-}
-
-div button a{
-    border: none;
-    padding: 1rem;
-    font-size:20px;
-    font-family:'Aldrich', Helvetica, sans-serif;
-    background-color: #ff7700;
-    border-radius: 0.8rem;
-    transition: background-color 0.3s;
-    text-shadow: none;
-} button a:hover{
-    text-shadow: none;
-    cursor: pointer;
-    background-color:#ff6600;
 }
 
 @media screen and (max-width: 900px){
