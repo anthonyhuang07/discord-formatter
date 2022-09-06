@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "EsNext",
+        "module": "ESNext",
+        "lib": [
+            "dom", 
+            "esnext",
+        ],
+        "allowJs": true,
+        "watch": true,
+        "moduleResolution": "node",
+    }
+}

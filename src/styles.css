@@ -1,0 +1,210 @@
+*, *:after, *:before {
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    position: relative;
+}
+
+body{
+    margin:0;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1e2124;
+}
+
+main{
+    color: #ffffff;
+    text-align: center;
+} main h1{
+    font-family: 'Aldrich', monospace;
+    font-size:3em;
+    color: #ffffff;
+    padding: 1rem;
+} main p{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5em;
+    width: 90%;
+} main a{
+    color: #a2ddff;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+} main ul{
+    font-family: 'JetBrains Mono', 'Helvetica Neue', sans-serif;
+    font-size: 1.4em;
+    width: 90%;
+    list-style-position: inside;
+    margin: auto;
+} main h2{
+    font-family:'Aldrich', Helvetica, sans-serif;
+    margin: 15px;
+    font-size: 1.75em;
+} main a:hover{
+    text-shadow: 0 0 5px #4b93ff;
+} main img{
+    padding: 1.5rem;
+} main hr{
+    margin: auto;
+    margin-top: 3rem;
+    border: white solid 0.1rem;
+    border-radius: 100rem;
+    width: 75%;
+} main textarea{
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+    background-color: #1e2124;
+    color: white;
+    border: 3px solid rgb(125, 125, 125);
+    padding: 1rem;
+    height: 10rem;
+    resize: none;
+    width: 50%;
+    font-family: 'JetBrains Mono', 'Helvetica Neue', sans-serif;
+}
+
+.cool{
+    position: relative;
+    margin: 0;
+    width: 100%;
+    padding: 5rem 2rem 5rem;
+    font-size: 1.5em;
+}
+
+.date{
+    background: linear-gradient(to right, #87a1ff, #7289da, #5865F2, #5663F7, #404EED, #2a3bf0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+article{
+    padding-left: 0;
+    display: block;
+    text-align: center;
+    margin: auto;
+    background-color:#282b30;
+    padding: 2rem 0 2rem 0rem;
+    width: 90%;
+    border-radius: 2rem;
+} article ul{
+    color: #eaeaea;
+    margin: auto;
+    line-height: 30px;
+    list-style-position: inside;
+    font-size: 1.5em;
+} article p{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+} article select{
+    background-color: #1e2124;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 3px solid rgb(125, 125, 125);
+}
+
+footer{
+    margin: auto;
+    text-align: center;
+    font-family:'Aldrich', Helvetica, sans-serif;
+    padding: 1.5em;
+} footer a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+button{
+    border: none;
+    padding: 0.9rem;
+    font-size:1em;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #1e2124;
+    color: white;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s;
+} button:hover{
+    cursor: pointer;
+    background-color:#2b3035 !important;
+} .resetButton{
+    margin-left: 1rem;
+    background-color: #1e1818;
+    transition: background-color 0.3s;
+} .resetButton:hover{
+    background-color:#341e1e !important;
+}
+
+div button a{
+    border: none;
+    padding: 1rem;
+    font-size:20px;
+    font-family:'Aldrich', Helvetica, sans-serif;
+    background-color: #ff7700;
+    border-radius: 0.8rem;
+    transition: background-color 0.3s;
+    text-shadow: none;
+} button a:hover{
+    text-shadow: none;
+    cursor: pointer;
+    background-color:#ff6600;
+}
+
+@media screen and (max-width: 900px){
+    .cool{
+        position: relative;
+        margin: 0;
+        width: 100%;
+        padding: 2rem 2rem 2rem;
+        font-size: 1.5em;
+    }
+
+    main textarea{
+        font-size: 1.5em;
+        width: 80%;
+        height: 12.5rem;
+    } main p{
+        font-size: 1.5em;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .cool{
+        position: relative;
+        margin: 0;
+        width: 100%;
+        padding: 2rem 2rem 2rem;
+        font-size: 1em;
+    }
+
+    main textarea{
+        font-size: 1.1em;
+        width: 80%;
+        height: 12.5rem;
+    } main p{
+        font-size: 1.1em;
+        width: 90%;
+    }
+}
