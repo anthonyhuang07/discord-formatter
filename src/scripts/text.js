@@ -1,6 +1,4 @@
 const textArea = document.getElementById("textArea");
-const resetBtn = document.getElementById("reset");
-const buttons = document.getElementById("btns");
 const boldBtn = document.getElementById("bold");
 const italBtn = document.getElementById("ital");
 const underBtn = document.getElementById("under");
@@ -14,8 +12,27 @@ boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = fa
 function resetFn() {
     boldBtn.style.cursor = italBtn.style.cursor = underBtn.style.cursor = strikeBtn.style.cursor = spoilBtn.style.cursor = quoteBtn.style.cursor = lineBtn.style.cursor = blockBtn.style.cursor = "pointer";
     boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color = "white";
-    textArea.readOnly = false;
     textArea.value = "";
+    textArea.style.fontWeight = "normal";
+    textArea.style.fontStyle = "";
+    textArea.style.textDecoration = "none";
+    textArea.style.color = "white";
+    textArea.style.fontFamily = "JetBrains Mono";
+    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false;
+}
+function copyFn() {
+    const btn = document.getElementById("copy");
+    textArea.select();
+    textArea.setSelectionRange(0, 8000);
+    navigator.clipboard.writeText(textArea.value);
+    btn.innerHTML = "Copied!";
+    setTimeout(() => { btn.innerHTML = "Copy"; }, 1000);
+}
+function rmFn() {
+    let newStr = textArea.value.replaceAll(/[*~_|`]|> /g, '');
+    textArea.value = newStr;
+    boldBtn.style.cursor = italBtn.style.cursor = underBtn.style.cursor = strikeBtn.style.cursor = spoilBtn.style.cursor = quoteBtn.style.cursor = lineBtn.style.cursor = blockBtn.style.cursor = "pointer";
+    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color = "white";
     textArea.style.fontWeight = "normal";
     textArea.style.fontStyle = "";
     textArea.style.textDecoration = "none";
@@ -30,7 +47,6 @@ function boldFn(text) {
         boldBtn.style.cursor = "default";
         boldBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         boldOn = true;
     }
 }
@@ -41,7 +57,6 @@ function italFn(text) {
         italBtn.style.cursor = "default";
         italBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         italOn = true;
     }
 }
@@ -52,7 +67,6 @@ function underFn(text) {
         underBtn.style.cursor = "default";
         underBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         underOn = true;
     }
 }
@@ -63,7 +77,6 @@ function strikeFn(text) {
         strikeBtn.style.cursor = "default";
         strikeBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         strikeOn = true;
     }
 }
@@ -74,7 +87,6 @@ function spoilFn(text) {
         spoilBtn.style.cursor = "default";
         spoilBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         spoilOn = true;
     }
 }
@@ -84,7 +96,6 @@ function quoteFn(text) {
         quoteBtn.style.cursor = "default";
         quoteBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         quoteOn = true;
     }
 }
@@ -95,7 +106,6 @@ function lineFn(text) {
         lineBtn.style.cursor = "default";
         lineBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         lineOn = true;
     }
 }
@@ -106,8 +116,6 @@ function blockFn(text) {
         blockBtn.style.cursor = "default";
         blockBtn.style.color = 'gray';
         textArea.value = text;
-        textArea.readOnly = true;
         blockOn = true;
     }
 }
-//h

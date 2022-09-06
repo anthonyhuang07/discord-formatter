@@ -1,5 +1,4 @@
 const textArea = (document.getElementById("textArea") as HTMLInputElement)
-const buttons = (document.getElementById("btns") as HTMLInputElement)
 
 const boldBtn = (document.getElementById("bold") as HTMLInputElement)
 const italBtn = (document.getElementById("ital") as HTMLInputElement)
@@ -24,13 +23,28 @@ function resetFn(): void{
     boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
 }
 function copyFn(): void{
-    console.log("fUCK")
+    const btn = (document.getElementById("copy") as HTMLInputElement)
+
     textArea.select();
     textArea.setSelectionRange(0, 8000);
 
     navigator.clipboard.writeText(textArea.value);
 
-    alert("Text Successfully Copied!")
+    btn.innerHTML = "Copied!" 
+    setTimeout(() => {  btn.innerHTML = "Copy"  }, 1000);
+
+}
+function rmFn(): void{
+    let newStr = textArea.value.replaceAll(/[*~_|`]|> /g, '')
+    textArea.value = newStr
+    boldBtn.style.cursor = italBtn.style.cursor = underBtn.style.cursor = strikeBtn.style.cursor = spoilBtn.style.cursor = quoteBtn.style.cursor = lineBtn.style.cursor = blockBtn.style.cursor =  "pointer"
+    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color =  "white"
+    textArea.style.fontWeight = "normal"
+    textArea.style.fontStyle = ""
+    textArea.style.textDecoration = "none"
+    textArea.style.color = "white"
+    textArea.style.fontFamily = "JetBrains Mono"
+    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
 }
 
 function boldFn(text: string): void {
