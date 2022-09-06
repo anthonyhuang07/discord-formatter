@@ -1,5 +1,4 @@
 const textArea = (document.getElementById("textArea") as HTMLInputElement)
-const resetBtn = (document.getElementById("reset") as HTMLInputElement)
 const buttons = (document.getElementById("btns") as HTMLInputElement)
 
 const boldBtn = (document.getElementById("bold") as HTMLInputElement)
@@ -16,7 +15,6 @@ boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = fa
 function resetFn(): void{
     boldBtn.style.cursor = italBtn.style.cursor = underBtn.style.cursor = strikeBtn.style.cursor = spoilBtn.style.cursor = quoteBtn.style.cursor = lineBtn.style.cursor = blockBtn.style.cursor =  "pointer"
     boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color =  "white"
-    textArea.readOnly = false
     textArea.value = ""
     textArea.style.fontWeight = "normal"
     textArea.style.fontStyle = ""
@@ -24,6 +22,15 @@ function resetFn(): void{
     textArea.style.color = "white"
     textArea.style.fontFamily = "JetBrains Mono"
     boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
+}
+function copyFn(): void{
+    console.log("fUCK")
+    textArea.select();
+    textArea.setSelectionRange(0, 8000);
+
+    navigator.clipboard.writeText(textArea.value);
+
+    alert("Text Successfully Copied!")
 }
 
 function boldFn(text: string): void {
@@ -33,7 +40,6 @@ function boldFn(text: string): void {
         boldBtn.style.cursor = "default"
         boldBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
         boldOn = true
     }
 }
@@ -44,7 +50,7 @@ function italFn(text: string): void {
         italBtn.style.cursor = "default"
         italBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
+        
         italOn = true
     }
 }
@@ -55,7 +61,7 @@ function underFn(text: string): void {
         underBtn.style.cursor = "default"
         underBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
+        
         underOn = true
     }
 }
@@ -66,7 +72,7 @@ function strikeFn(text: string): void {
         strikeBtn.style.cursor = "default"
         strikeBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
+        
         strikeOn = true
     }
 }
@@ -77,7 +83,7 @@ function spoilFn(text: string): void {
         spoilBtn.style.cursor = "default"
         spoilBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
+        
         spoilOn = true
     }
 }
@@ -87,7 +93,7 @@ function quoteFn(text: string): void {
         quoteBtn.style.cursor = "default" 
         quoteBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
+        
         quoteOn = true
     }
 }
@@ -98,7 +104,6 @@ function lineFn(text: string): void {
         lineBtn.style.cursor = "default"
         lineBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
         lineOn = true
     }
 }
@@ -109,9 +114,6 @@ function blockFn(text: string): void {
         blockBtn.style.cursor = "default"
         blockBtn.style.color = 'gray';
         textArea.value = text
-        textArea.readOnly = true
         blockOn = true
     }
 }
-
-//h

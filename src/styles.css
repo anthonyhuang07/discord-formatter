@@ -148,12 +148,12 @@ button{
 } button:hover{
     cursor: pointer;
     background-color:#2b3035 !important;
-} .resetButton{
-    margin-left: 1rem;
-    background-color: #1e1818;
-    transition: background-color 0.3s;
+} .resetButton, .copyButton{
+    margin-left: 0.5rem;
 } .resetButton:hover{
-    background-color:#341e1e !important;
+    background-color:#420000 !important;
+} .copyButton:hover{
+    background-color:#0c4200 !important;
 }
 
 div button a{
