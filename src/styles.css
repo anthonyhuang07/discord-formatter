@@ -162,9 +162,6 @@ button{
 
 #timediv{
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-evenly;
 }
 
 @media screen and (max-width: 900px){
