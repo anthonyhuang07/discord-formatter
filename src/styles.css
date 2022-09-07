@@ -41,6 +41,10 @@ main{
     font-family:'Aldrich', Helvetica, sans-serif;
     margin: 15px;
     font-size: 1.75em;
+} main h3{
+    font-family:'Aldrich', Helvetica, sans-serif;
+    margin: 15px;
+    font-size: 1.25em;
 } main a:hover{
     text-shadow: 0 0 5px #5663F7;
 } main hr{
@@ -60,6 +64,9 @@ main{
     resize: none;
     width: 50%;
     font-family: 'JetBrains Mono', 'Helvetica Neue', sans-serif;
+} main code{
+    background-color: #1e2124;
+    font-size: 1.1em;
 }
 
 .cool{
@@ -141,6 +148,23 @@ button{
     background-color:#420000 !important;
 } .copyButton:hover{
     background-color:#0c4200 !important;
+}
+
+#datepicker{
+    background-color: #1e2124;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    border: 2px solid rgb(125, 125, 125);
+}
+
+#timediv{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 @media screen and (max-width: 900px){

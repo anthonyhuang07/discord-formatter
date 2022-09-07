@@ -29,26 +29,65 @@
                 <h1><span class="date">Discord</span> Formatter!</h1>
             </div>
             <article>
-                <select>
-                    <option value="text">Regular Text</option>
+                <select id="dropdown" onchange="dropdown()">
+                    <option value="text" >Regular Text</option>
                     <option value="color">Colored Text</option>
-                    <option value="time">Timestamp</option>
+                    <option value="time" >Timestamp</option>
                 </select>
                 <button type="button" id="reset" class="resetButton" onclick="resetFn()">Reset</button>
-                <button type="button" id="copy" class="copyButton" onclick="copyFn()">Copy</button>
-                <br><br>
-                <div class="textdiv">
-                    <textarea placeholder="Your Text Here..." id="textArea" oninput="rmFn()"></textarea><br><br>
+                <button type="button" id="copy" class="copyButton" onclick="copyFn()">Copy</button><br><br>
+                <div>
+                    <textarea placeholder="Your Text Here..." id="textArea" oninput="rmFn()"></textarea>
+                    <input type="datetime-local" step=1 id="datepicker" style="display: none"><br><br>
                     <h2>Options</h2>
-                    <div id="btns">
-                        <button type="button" id="bold" onclick="boldFn(textArea.value)">Bold</button>
-                        <button type="button" id="ital" onclick="italFn(textArea.value)">Italic</button>
-                        <button type="button" id="under" onclick="underFn(textArea.value)">Underscore</button>
-                        <button type="button" id="strike" onclick="strikeFn(textArea.value)">Strikethrough</button>
-                        <button type="button" id="spoil" onclick="spoilFn(textArea.value)">Spoiler</button>
-                        <button type="button" id="quote" onclick="quoteFn(textArea.value)">Quote</button>
-                        <button type="button" id="line" onclick="lineFn(textArea.value)">Code Line</button>
-                        <button type="button" id="block" onclick="blockFn(textArea.value)">Code Block</button>
+                </div>
+                <div id="textdiv">
+                    <button type="button" id="bold" onclick="boldFn(textArea.value)">Bold</button>
+                    <button type="button" id="ital" onclick="italFn(textArea.value)">Italic</button>
+                    <button type="button" id="under" onclick="underFn(textArea.value)">Underscore</button>
+                    <button type="button" id="strike" onclick="strikeFn(textArea.value)">Strikethrough</button>
+                    <button type="button" id="spoil" onclick="spoilFn(textArea.value)">Spoiler</button>
+                    <button type="button" id="quote" onclick="quoteFn(textArea.value)">Quote</button>
+                    <button type="button" id="line" onclick="lineFn(textArea.value)">Code Line</button>
+                    <button type="button" id="block" onclick="blockFn(textArea.value)">Code Block</button>
+                </div>
+                <div id="colordiv" style="display: none;">
+                    <button type="button" id="red" onclick="redFn(textArea.value)" style="color: #D5322F;">Red</button>
+                    <button type="button" id="orange" onclick="orangeFn(textArea.value)" style="color: #B7471B;">Orange</button>
+                    <button type="button" id="yellow" onclick="yellowFn(textArea.value)" style="color: #B18602;">Yellow</button>
+                    <button type="button" id="green" onclick="greenFn(textArea.value)" style="color: #839701;">Green</button>
+                    <button type="button" id="turq" onclick="turqFn(textArea.value)" style="color: #2B918A;">Turquoise</button>
+                    <button type="button" id="blue" onclick="blueFn(textArea.value)" style="color: #287AB5;">Blue</button>
+                    <button type="button" id="gray" onclick="grayFn(textArea.value)" style="color: #576D74;">Gray</button>
+                </div>
+                <div id="timediv" style="display: none;">
+                    <div>
+                        <h3>Short Time:</h3>
+                        <code>HH:MM (AM/PM)</code>
+                    </div>
+                    <div>
+                        <h3>Long Time:</h3>
+                        <code>HH:MM:SS (AM/PM)</code>
+                    </div>
+                    <div>
+                        <h3>Short Date:</h3>
+                        <code>MM/DD/YYYY</code>
+                    </div>
+                    <div>
+                        <h3>Long Date:</h3>
+                        <code>Mo DD, YYYY</code>
+                    </div>
+                    <div>
+                        <h3>Full Date and Time:</h3>
+                        <code>Mo DD, YYYY HH:MM (AM/PM)</code>
+                    </div>
+                    <div>
+                        <h3>FD&T with Day:</h3>
+                        <code>Day, Mo DD, YYYY HH:MM (AM/PM)</code>
+                    </div>
+                    <div>
+                        <h3>Relative:</h3>
+                        <code># (Unit) Ago</code>
                     </div>
                 </div>
             </article>
@@ -58,5 +97,7 @@
             </footer>
         </main>
         <script src="src/scripts/text.js" defer></script>
+        <script src="src/scripts/index.js" defer></script>
+        <script src="src/scripts/color.js" defer></script>
     </body>
 </html>

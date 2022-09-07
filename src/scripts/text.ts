@@ -1,5 +1,3 @@
-const textArea = (document.getElementById("textArea") as HTMLInputElement)
-
 const boldBtn = (document.getElementById("bold") as HTMLInputElement)
 const italBtn = (document.getElementById("ital") as HTMLInputElement)
 const underBtn = (document.getElementById("under") as HTMLInputElement)
@@ -10,40 +8,6 @@ const lineBtn = (document.getElementById("line") as HTMLInputElement)
 const blockBtn = (document.getElementById("block") as HTMLInputElement)
 let boldOn: boolean, italOn: boolean, underOn: boolean, strikeOn: boolean, spoilOn: boolean, quoteOn: boolean, lineOn: boolean, blockOn: boolean;
 boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
-
-function resetFn(): void{
-    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color =  "white"
-    textArea.value = ""
-    textArea.style.fontWeight = "normal"
-    textArea.style.fontStyle = ""
-    textArea.style.textDecoration = "none"
-    textArea.style.color = "white"
-    textArea.style.fontFamily = "JetBrains Mono"
-    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
-}
-function copyFn(): void{
-    const btn = (document.getElementById("copy") as HTMLInputElement)
-
-    textArea.select();
-    textArea.setSelectionRange(0, 8000);
-
-    navigator.clipboard.writeText(textArea.value);
-
-    btn.innerHTML = "Copied!" 
-    setTimeout(() => {  btn.innerHTML = "Copy"  }, 1000);
-
-}
-function rmFn(): void{
-    let newStr = textArea.value.replaceAll(/[*`]|> |~~|__|\|\|/g, '')
-    textArea.value = newStr
-    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color =  "white"
-    textArea.style.fontWeight = "normal"
-    textArea.style.fontStyle = ""
-    textArea.style.textDecoration = "none"
-    textArea.style.color = "white"
-    textArea.style.fontFamily = "JetBrains Mono"
-    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
-}
 
 function boldFn(text: string): void {
     if (boldOn === false) {

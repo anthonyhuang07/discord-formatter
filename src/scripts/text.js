@@ -1,4 +1,3 @@
-const textArea = document.getElementById("textArea");
 const boldBtn = document.getElementById("bold");
 const italBtn = document.getElementById("ital");
 const underBtn = document.getElementById("under");
@@ -9,35 +8,6 @@ const lineBtn = document.getElementById("line");
 const blockBtn = document.getElementById("block");
 let boldOn, italOn, underOn, strikeOn, spoilOn, quoteOn, lineOn, blockOn;
 boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false;
-function resetFn() {
-    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color = "white";
-    textArea.value = "";
-    textArea.style.fontWeight = "normal";
-    textArea.style.fontStyle = "";
-    textArea.style.textDecoration = "none";
-    textArea.style.color = "white";
-    textArea.style.fontFamily = "JetBrains Mono";
-    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false;
-}
-function copyFn() {
-    const btn = document.getElementById("copy");
-    textArea.select();
-    textArea.setSelectionRange(0, 8000);
-    navigator.clipboard.writeText(textArea.value);
-    btn.innerHTML = "Copied!";
-    setTimeout(() => { btn.innerHTML = "Copy"; }, 1000);
-}
-function rmFn() {
-    let newStr = textArea.value.replaceAll(/[*`]|> |~~|__|\|\|/g, '');
-    textArea.value = newStr;
-    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color = "white";
-    textArea.style.fontWeight = "normal";
-    textArea.style.fontStyle = "";
-    textArea.style.textDecoration = "none";
-    textArea.style.color = "white";
-    textArea.style.fontFamily = "JetBrains Mono";
-    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false;
-}
 function boldFn(text) {
     if (boldOn === false) {
         text = "**" + text.concat("**");
