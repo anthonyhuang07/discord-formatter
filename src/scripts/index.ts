@@ -10,7 +10,7 @@ const dropdownVar = (document.getElementById("dropdown") as HTMLInputElement)
 
 function dropdown(): void{
     if (dropdownVar.value === "text"){
-        resetFn()
+        rmFn()
         textArea.style.display = "inline-block"
         dateArea.style.display = "none"
         colorDiv.style.display = "none"
@@ -19,7 +19,7 @@ function dropdown(): void{
         copyBtn.style.display = "inline-block"
         resetBtn.style.display = "inline-block"
     } else if (dropdownVar.value === "color"){
-        resetFn()
+        rmFn()
         textArea.style.display = "inline-block"
         dateArea.style.display = "none"
         colorDiv.style.display = "block"
@@ -28,7 +28,7 @@ function dropdown(): void{
         copyBtn.style.display = "inline-block"
         resetBtn.style.display = "inline-block"
     } else if (dropdownVar.value === "time"){
-        resetFn()
+        rmFn()
         textArea.style.display = "none"
         dateArea.style.display = "inline-block"
         colorDiv.style.display = "none"
