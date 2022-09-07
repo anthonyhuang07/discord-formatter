@@ -199,7 +199,20 @@ button{
         width: 80%;
         height: 12.5rem;
     } main p{
-        font-size: 1.1em;
+        font-size: 1em;
         width: 90%;
+    } main select{
+        padding: 0.5rem;
+    } main button{
+        margin-bottom: 0.5rem;
+        margin-right: 0.25rem
+    }
+
+    article{
+        width: 95%;
+    } article #timediv{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.25em;
     }
 }
