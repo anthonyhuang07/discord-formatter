@@ -6,8 +6,9 @@ const spoilBtn = document.getElementById("spoil");
 const quoteBtn = document.getElementById("quote");
 const lineBtn = document.getElementById("line");
 const blockBtn = document.getElementById("block");
-let boldOn, italOn, underOn, strikeOn, spoilOn, quoteOn, lineOn, blockOn;
-boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false;
+const slashBtn = document.getElementById("slash");
+let boldOn, italOn, underOn, strikeOn, spoilOn, quoteOn, lineOn, blockOn, slashOn;
+boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false;
 function boldFn(text) {
     if (boldOn === false) {
         text = "**" + text.concat("**");
@@ -132,5 +133,21 @@ function blockFn(text) {
         textArea.style.fontFamily = "JetBrains Mono";
         textArea.value = text;
         blockOn = false;
+    }
+}
+function slashFn(text) {
+    if (slashOn === false) {
+        text = "<" + "\/" + text.concat(":0>");
+        textArea.style.color = "#6D81D0";
+        slashBtn.style.color = 'gray';
+        textArea.value = text;
+        slashOn = true;
+    }
+    else if (slashOn === true) {
+        text = text.replace(/<\/|:0>/g, "");
+        slashBtn.style.color = 'white';
+        textArea.style.color = "white";
+        textArea.value = text;
+        slashOn = false;
     }
 }

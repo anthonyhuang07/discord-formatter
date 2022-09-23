@@ -6,8 +6,9 @@ const spoilBtn = (document.getElementById("spoil") as HTMLInputElement)
 const quoteBtn = (document.getElementById("quote") as HTMLInputElement)
 const lineBtn = (document.getElementById("line") as HTMLInputElement)
 const blockBtn = (document.getElementById("block") as HTMLInputElement)
-let boldOn: boolean, italOn: boolean, underOn: boolean, strikeOn: boolean, spoilOn: boolean, quoteOn: boolean, lineOn: boolean, blockOn: boolean;
-boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
+const slashBtn = (document.getElementById("slash") as HTMLInputElement)
+let boldOn: boolean, italOn: boolean, underOn: boolean, strikeOn: boolean, spoilOn: boolean, quoteOn: boolean, lineOn: boolean, blockOn: boolean, slashOn: boolean;
+boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false
 
 function boldFn(text: string): void {
     if (boldOn === false) {
@@ -127,5 +128,20 @@ function blockFn(text: string): void {
         textArea.style.fontFamily = "JetBrains Mono"
         textArea.value = text
         blockOn = false
+    }
+}
+function slashFn(text: string): void {
+    if (slashOn === false) {
+        text = "<" + "\/" + text.concat(":0>")
+        textArea.style.color = "#6D81D0"
+        slashBtn.style.color = 'gray';
+        textArea.value = text
+        slashOn = true
+    } else if(slashOn === true) {
+        text = text.replace(/<\/|:0>/g, "")
+        slashBtn.style.color = 'white';
+        textArea.style.color = "white";
+        textArea.value = text
+        slashOn = false
     }
 }

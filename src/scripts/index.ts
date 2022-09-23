@@ -32,7 +32,7 @@ function dropdown(): void{
         textArea.style.display = "none"
         dateArea.style.display = "inline-block"
         colorDiv.style.display = "none"
-        timeDiv.style.display = "flex"
+        timeDiv.style.display = "inline-block"
         textDiv.style.display = "none"
         copyBtn.style.display = "none"
         resetBtn.style.display = "none"
@@ -40,14 +40,14 @@ function dropdown(): void{
 }
 
 function resetFn(): void{
-    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color =  "white"
+    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color = slashBtn.style.color = "white"
     textArea.value = ""
     textArea.style.fontWeight = "normal"
     textArea.style.fontStyle = ""
     textArea.style.textDecoration = "none"
     textArea.style.color = "white"
     textArea.style.fontFamily = "JetBrains Mono"
-    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
+    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false
     redBtn.style.display = orangeBtn.style.display = yellowBtn.style.display = greenBtn.style.display = turqBtn.style.display = blueBtn.style.display = grayBtn.style.display = "inline-block" 
 
 }
@@ -67,13 +67,13 @@ function rmFn(): void{
     let newStr = textArea.value.replaceAll(/[*`]|> |~~|__|\|\||diff\n- |css\n\[|]\n|fix\n|\n|diff\n\+ |bash\n\"|\"\n|ini\n\[|bf\n|/g, '')
     textArea.value = newStr
     redBtn.style.display = orangeBtn.style.display = yellowBtn.style.display = greenBtn.style.display = turqBtn.style.display = blueBtn.style.display = grayBtn.style.display = "inline-block" 
-    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color =  "white"
+    boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color = slashBtn.style.color = "white"
     textArea.style.fontWeight = "normal"
     textArea.style.fontStyle = ""
     textArea.style.textDecoration = "none"
     textArea.style.color = "white"
     textArea.style.fontFamily = "JetBrains Mono"
-    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = false
+    boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false
     redBtn.style.color = '#D5322F';
     orangeBtn.style.color = '#B7471B';
     yellowBtn.style.color = '#B18602';

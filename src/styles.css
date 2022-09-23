@@ -211,8 +211,6 @@ button{
     article{
         width: 95%;
     } article #timediv{
-        display: flex;
-        flex-direction: column;
         font-size: 1.25em;
     }
 }

@@ -1,98 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset = "utf-8">
-        <title>Discord Message Formatter</title>
-        <meta name="google-site-verification" content="zZlQqHj_UFRqv-n1Rw1szukskpRuIi_lxmuiTbuwf9o" />
-        <meta content="Discord Message Formatter" property="og:title" />
-        <meta content="A website to help you format your Discord messages!" property="og:description" />
-        <meta content="https://ah07.xyz/discord-formatter" property="og:url" />
-        <meta content="https://i.imgur.com/8QaFXJU.png" property="og:image" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=JetBrains+Mono&display=swap" rel="stylesheet">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-        <link rel="manifest" href="/assets/favicons/site.webmanifest">
-        <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-        <meta name="apple-mobile-web-app-title" content="Discord Message Formatter">
-        <meta name="application-name" content="Discord Message Formatter">
-        <meta name="msapplication-TileColor" content="#ff7700">
-        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-        <link rel="stylesheet" href="src/styles.css">
-    </head>
-    <body>
-        <main> 
-            <div class="cool">
-                <h1><span class="date">Discord</span> Formatter!</h1>
+
+<head>
+    <meta charset="utf-8">
+    <title>Discord Message Formatter</title>
+    <meta name="google-site-verification" content="zZlQqHj_UFRqv-n1Rw1szukskpRuIi_lxmuiTbuwf9o" />
+    <meta content="Discord Message Formatter" property="og:title" />
+    <meta content="A website to help you format your Discord messages!" property="og:description" />
+    <meta content="https://ah07.xyz/discord-formatter" property="og:url" />
+    <meta content="https://i.imgur.com/8QaFXJU.png" property="og:image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Discord Message Formatter">
+    <meta name="application-name" content="Discord Message Formatter">
+    <meta name="msapplication-TileColor" content="#ff7700">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+    <main>
+        <div class="cool">
+            <h1><span class="date">Discord</span> Formatter!</h1>
+        </div>
+        <article>
+            <select id="dropdown" onchange="dropdown()">
+                <option value="text">Regular Text</option>
+                <option value="color">Colored Text</option>
+                <option value="time">Timestamp</option>
+            </select>
+            <button type="button" id="reset" class="resetButton" onclick="resetFn()">Reset</button>
+            <button type="button" id="copy" class="copyButton" onclick="copyFn()">Copy</button><br><br>
+            <div>
+                <textarea placeholder="Your Text Here..." id="textArea" oninput="rmFn()"></textarea>
+                <input type="datetime-local" step=1 id="datepicker" style="display: none" oninput="main()"><br><br>
+                <h2>Options</h2>
             </div>
-            <article>
-                <select id="dropdown" onchange="dropdown()">
-                    <option value="text" >Regular Text</option>
-                    <option value="color">Colored Text</option>
-                    <option value="time" >Timestamp</option>
-                </select>
-                <button type="button" id="reset" class="resetButton" onclick="resetFn()">Reset</button>
-                <button type="button" id="copy" class="copyButton" onclick="copyFn()">Copy</button><br><br>
-                <div>
-                    <textarea placeholder="Your Text Here..." id="textArea" oninput="rmFn()"></textarea>
-                    <input type="datetime-local" step=1 id="datepicker" style="display: none" oninput="main()"><br><br>
-                    <h2>Options</h2>
-                </div>
-                <div id="textdiv">
-                    <button type="button" id="bold" onclick="boldFn(textArea.value)">Bold</button>
-                    <button type="button" id="ital" onclick="italFn(textArea.value)">Italic</button>
-                    <button type="button" id="under" onclick="underFn(textArea.value)">Underscore</button>
-                    <button type="button" id="strike" onclick="strikeFn(textArea.value)">Strikethrough</button>
-                    <button type="button" id="spoil" onclick="spoilFn(textArea.value)">Spoiler</button>
-                    <button type="button" id="quote" onclick="quoteFn(textArea.value)">Quote</button>
-                    <button type="button" id="line" onclick="lineFn(textArea.value)">Code Line</button>
-                    <button type="button" id="block" onclick="blockFn(textArea.value)">Code Block</button>
-                </div>
-                <div id="colordiv" style="display: none;">
-                    <button type="button" id="red" onclick="redFn(textArea.value)" style="color: #D5322F;">Red</button>
-                    <button type="button" id="orange" onclick="orangeFn(textArea.value)" style="color: #B7471B;">Orange</button>
-                    <button type="button" id="yellow" onclick="yellowFn(textArea.value)" style="color: #B18602;">Yellow</button>
-                    <button type="button" id="green" onclick="greenFn(textArea.value)" style="color: #839701;">Green</button>
-                    <button type="button" id="turq" onclick="turqFn(textArea.value)" style="color: #2B918A;">Turquoise</button>
-                    <button type="button" id="blue" onclick="blueFn(textArea.value)" style="color: #287AB5;">Blue</button>
-                    <button type="button" id="gray" onclick="grayFn(textArea.value)" style="color: #576D74;">Gray</button>
-                </div>
-                <div id="timediv" style="display: none;">
+            <div id="textdiv">
+                <button type="button" id="bold" onclick="boldFn(textArea.value)">Bold</button>
+                <button type="button" id="ital" onclick="italFn(textArea.value)">Italic</button>
+                <button type="button" id="under" onclick="underFn(textArea.value)">Underscore</button>
+                <button type="button" id="strike" onclick="strikeFn(textArea.value)">Strikethrough</button>
+                <button type="button" id="spoil" onclick="spoilFn(textArea.value)">Spoiler</button>
+                <button type="button" id="quote" onclick="quoteFn(textArea.value)">Quote</button>
+                <button type="button" id="line" onclick="lineFn(textArea.value)">Code Line</button>
+                <button type="button" id="block" onclick="blockFn(textArea.value)">Code Block</button>
+                <button type="button" id="slash" onclick="slashFn(textArea.value)">Slash Command</button>
+            </div>
+            <div id="colordiv" style="display: none;">
+                <button type="button" id="red" onclick="redFn(textArea.value)" style="color: #D5322F;">Red</button>
+                <button type="button" id="orange" onclick="orangeFn(textArea.value)"
+                    style="color: #B7471B;">Orange</button>
+                <button type="button" id="yellow" onclick="yellowFn(textArea.value)"
+                    style="color: #B18602;">Yellow</button>
+                <button type="button" id="green" onclick="greenFn(textArea.value)"
+                    style="color: #839701;">Green</button>
+                <button type="button" id="turq" onclick="turqFn(textArea.value)"
+                    style="color: #2B918A;">Turquoise</button>
+                <button type="button" id="blue" onclick="blueFn(textArea.value)" style="color: #287AB5;">Blue</button>
+                <button type="button" id="gray" onclick="grayFn(textArea.value)" style="color: #576D74;">Gray</button>
+            </div>
+            <div id="timediv" style="display: none;">
+                <div style="display: flex; align-items: center;">
                     <div>
-                        <h3>Short Time:</h3>
+                        <h3>Short Time (t):</h3>
                         <code id="datet">HH:MM (AM/PM)</code>
-                        <h3>Long Time:</h3>
+                        <h3>Long Time (T):</h3>
                         <code id="dateT">HH:MM:SS (AM/PM)</code>
                     </div>
                     <div>
-                        <h3>Short Date:</h3>
+                        <h3>Short Date (d):</h3>
                         <code id="dated">MM/DD/YYYY</code>
-                        <h3>Long Date:</h3>
+                        <h3>Long Date (D):</h3>
                         <code id="dateD">Mo DD, YYYY</code>
                     </div>
                     <div>
-                        <h3>Full Date and Time:</h3>
+                        <h3>Full Date and Time (f):</h3>
                         <code id="datef">Mo DD, YYYY HH:MM (AM/PM)</code>
-                        <h3>FD&T w/ Day:</h3>
+                        <h3>FD&T w/ Day (F):</h3>
                         <code id="dateF">Day, Mo DD, YYYY HH:MM (AM/PM)</code>
                     </div>
                     <div>
-                        <h3>Relative:</h3>
+                        <h3>Relative (R):</h3>
                         <code id="dateR"># (Unit) Ago</code>
                     </div>
+                </div><br>
+                <div>
+                    <h2>Guide</h2>
+                    <img src="https://i.imgur.com/8KsLNop.jpg" width="500px" style="border-radius: 0.6rem" />
                 </div>
-            </article>
-            <hr>
-            <footer>
-                <a href="https://github.com/anthonyhuang07/">Copyright (c) 2022 Anthony Huang</a>
-            </footer>
-        </main>
-        <script src="src/scripts/text.js" defer></script>
-        <script src="src/scripts/index.js" defer></script>
-        <script src="src/scripts/color.js" defer></script>
-        <script src="src/scripts/time.js" defer></script>
-    </body>
+        </article>
+        <hr>
+        <footer>
+            <a href="https://github.com/anthonyhuang07/">Copyright (c) 2022 Anthony Huang</a>
+        </footer>
+    </main>
+    <script src="src/scripts/text.js" defer></script>
+    <script src="src/scripts/index.js" defer></script>
+    <script src="src/scripts/color.js" defer></script>
+    <script src="src/scripts/time.js" defer></script>
+</body>
+
 </html>
