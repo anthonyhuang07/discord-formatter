@@ -7,6 +7,7 @@ const quoteBtn = (document.getElementById("quote") as HTMLInputElement)
 const lineBtn = (document.getElementById("line") as HTMLInputElement)
 const blockBtn = (document.getElementById("block") as HTMLInputElement)
 const slashBtn = (document.getElementById("slash") as HTMLInputElement)
+let slashText: string;
 let boldOn: boolean, italOn: boolean, underOn: boolean, strikeOn: boolean, spoilOn: boolean, quoteOn: boolean, lineOn: boolean, blockOn: boolean, slashOn: boolean;
 boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false
 
@@ -132,13 +133,15 @@ function blockFn(text: string): void {
 }
 function slashFn(text: string): void {
     if (slashOn === false) {
+        slashText = text;
         text = "<" + "\/" + text.concat(":0>")
+        text = text.replaceAll(" ", "")
         textArea.style.color = "#6D81D0"
         slashBtn.style.color = 'gray';
         textArea.value = text
         slashOn = true
     } else if(slashOn === true) {
-        text = text.replace(/<\/|:0>/g, "")
+        text = slashText;
         slashBtn.style.color = 'white';
         textArea.style.color = "white";
         textArea.value = text
