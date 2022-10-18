@@ -134,8 +134,7 @@ function blockFn(text: string): void {
 function slashFn(text: string): void {
     if (slashOn === false) {
         slashText = text;
-        text = "<" + "\/" + text.concat(":0>")
-        text = text.replaceAll(" ", "")
+        text = "<" + "\/" + text.concat(":0>").replaceAll(' ', '')
         textArea.style.color = "#6D81D0"
         slashBtn.style.color = 'gray';
         textArea.value = text

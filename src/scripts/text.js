@@ -7,6 +7,7 @@ const quoteBtn = document.getElementById("quote");
 const lineBtn = document.getElementById("line");
 const blockBtn = document.getElementById("block");
 const slashBtn = document.getElementById("slash");
+let slashText;
 let boldOn, italOn, underOn, strikeOn, spoilOn, quoteOn, lineOn, blockOn, slashOn;
 boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false;
 function boldFn(text) {
@@ -137,14 +138,15 @@ function blockFn(text) {
 }
 function slashFn(text) {
     if (slashOn === false) {
-        text = "<" + "\/" + text.concat(":0>");
+        slashText = text;
+        text = "<" + "\/" + text.concat(":0>").replaceAll(' ', '');
         textArea.style.color = "#6D81D0";
         slashBtn.style.color = 'gray';
         textArea.value = text;
         slashOn = true;
     }
     else if (slashOn === true) {
-        text = text.replace(/<\/|:0>/g, "");
+        text = slashText;
         slashBtn.style.color = 'white';
         textArea.style.color = "white";
         textArea.value = text;
