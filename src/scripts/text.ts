@@ -132,18 +132,23 @@ function blockFn(text: string): void {
     }
 }
 function slashFn(text: string): void {
-    if (slashOn === false) {
-        slashText = text;
-        text = "<" + "\/" + text.concat(":0>").replaceAll(' ', '')
-        textArea.style.color = "#6D81D0"
-        slashBtn.style.color = 'gray';
-        textArea.value = text
-        slashOn = true
-    } else if(slashOn === true) {
-        text = slashText;
-        slashBtn.style.color = 'white';
-        textArea.style.color = "white";
-        textArea.value = text
-        slashOn = false
+    console.log(textArea.value.length)
+    if (textArea.value.length > 32){
+        alert("Please enter a string that is less than 32 characters!")
+    } else {
+        if (slashOn === false) {
+            slashText = text;
+            text = "<" + "\/" + text.concat(":0>").replaceAll(' ', '')
+            textArea.style.color = "#6D81D0"
+            slashBtn.style.color = 'gray';
+            textArea.value = text
+            slashOn = true
+        } else if(slashOn === true) {
+            text = slashText;
+            slashBtn.style.color = 'white';
+            textArea.style.color = "white";
+            textArea.value = text
+            slashOn = false
+        }
     }
 }

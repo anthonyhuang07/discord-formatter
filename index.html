@@ -44,15 +44,16 @@
                 <h2>Options</h2>
             </div>
             <div id="textdiv">
-                <button type="button" id="bold" onclick="boldFn(textArea.value)">Bold</button>
-                <button type="button" id="ital" onclick="italFn(textArea.value)">Italic</button>
-                <button type="button" id="under" onclick="underFn(textArea.value)">Underscore</button>
-                <button type="button" id="strike" onclick="strikeFn(textArea.value)">Strikethrough</button>
-                <button type="button" id="spoil" onclick="spoilFn(textArea.value)">Spoiler</button>
-                <button type="button" id="quote" onclick="quoteFn(textArea.value)">Quote</button>
-                <button type="button" id="line" onclick="lineFn(textArea.value)">Code Line</button>
-                <button type="button" id="block" onclick="blockFn(textArea.value)">Code Block</button>
-                <button type="button" id="slash" onclick="slashFn(textArea.value)">Slash Command</button>
+                <button type="button" id="bold" onclick="boldFn(textArea.value)" style="font-weight: bold;">Bold</button>
+                <button type="button" id="ital" onclick="italFn(textArea.value)" style="font-style: italic;">Italic</button>
+                <button type="button" id="under" onclick="underFn(textArea.value)" style="text-decoration: underline;">Underscore</button>
+                <button type="button" id="strike" onclick="strikeFn(textArea.value)" style="text-decoration: line-through">Strikethrough</button>
+                <button type="button" id="spoil" onclick="spoilFn(textArea.value)" style="color: #999999">Spoiler</button>
+                <button type="button" id="quote" onclick="quoteFn(textArea.value)">▐ Quote</button>
+                <button type="button" id="line" onclick="lineFn(textArea.value)">[Code Line]</button>
+                <button type="button" id="block" onclick="blockFn(textArea.value)">[[Code Block]]</button>
+                <button type="button" id="slash" onclick="slashFn(textArea.value)" style="color: #6D81D0">/SlashCommand</button><br><br>
+                <p style="font-size: 0.9em;">Note: if not ordered properly, some formats might not work (e.g. using spoiler before code block, negating the spoiler)</p>
             </div>
             <div id="colordiv" style="display: none;">
                 <button type="button" id="red" onclick="redFn(textArea.value)" style="color: #D5322F;">Red</button>

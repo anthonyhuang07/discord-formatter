@@ -58,7 +58,7 @@ function copyFn() {
     setTimeout(() => { btn.innerHTML = "Copy"; }, 1000);
 }
 function rmFn() {
-    let newStr = textArea.value.replaceAll(/[*`]|> |~~|__|\|\||diff\n- |css\n\[|]\n|fix\n|\n|diff\n\+ |bash\n\"|\"\n|ini\n\[|bf\n|/g, '');
+    let newStr = textArea.value.replaceAll(/[*`]|> |~~|__|\|\||diff\n- |css\n\[|]\n|fix\n|\n|diff\n\+ |bash\n\"|\"\n|ini\n\[|bf\n|<\/|:0>|/g, '');
     textArea.value = newStr;
     redBtn.style.display = orangeBtn.style.display = yellowBtn.style.display = greenBtn.style.display = turqBtn.style.display = blueBtn.style.display = grayBtn.style.display = "inline-block";
     boldBtn.style.color = italBtn.style.color = underBtn.style.color = strikeBtn.style.color = spoilBtn.style.color = quoteBtn.style.color = lineBtn.style.color = blockBtn.style.color = slashBtn.style.color = "white";
