@@ -1,1 +1,1 @@
-src/scripts/*.js -linguist-detectable
+src/scripts/*.js linguist-vendored
