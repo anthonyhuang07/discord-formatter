@@ -46,7 +46,7 @@ function resetFn(): void{
     textArea.style.fontStyle = ""
     textArea.style.textDecoration = "none"
     textArea.style.color = "white"
-    textArea.style.fontFamily = "JetBrains Mono"
+    textArea.style.fontFamily = "Whitney Book"
     boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false
     redBtn.style.display = orangeBtn.style.display = yellowBtn.style.display = greenBtn.style.display = turqBtn.style.display = blueBtn.style.display = grayBtn.style.display = "inline-block" 
 
@@ -72,7 +72,7 @@ function rmFn(): void{
     textArea.style.fontStyle = ""
     textArea.style.textDecoration = "none"
     textArea.style.color = "white"
-    textArea.style.fontFamily = "JetBrains Mono"
+    textArea.style.fontFamily = "Whitney Book"
     boldOn = italOn = underOn = strikeOn = spoilOn = quoteOn = lineOn = blockOn = slashOn = false
     redBtn.style.color = '#D5322F';
     orangeBtn.style.color = '#B7471B';

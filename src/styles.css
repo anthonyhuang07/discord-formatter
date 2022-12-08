@@ -25,12 +25,12 @@ main{
     color: #ffffff;
     text-align: center;
 } main h1{
-    font-family:'Aldrich', Helvetica, sans-serif;
-    font-size:3em;
+    font-family:'Whitney Book', Helvetica, sans-serif;
+    font-size:3.25em;
     color: #ffffff;
     padding: 1rem;
 } main p{
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Whitney Book', sans-serif;
     font-size: 1.5em;
     width: 90%;
 } main a{
@@ -38,11 +38,11 @@ main{
     text-decoration: none;
     transition: text-shadow 0.3s;
 } main h2{
-    font-family:'Aldrich', Helvetica, sans-serif;
+    font-family:'Whitney Book', Helvetica, sans-serif;
     margin: 15px;
     font-size: 1.75em;
 } main h3{
-    font-family:'Aldrich', Helvetica, sans-serif;
+    font-family:'Whitney Book', Helvetica, sans-serif;
     margin: 15px;
     font-size: 1.25em;
 } main a:hover{
@@ -63,7 +63,8 @@ main{
     height: 10rem;
     resize: none;
     width: 50%;
-    font-family: 'JetBrains Mono', 'Helvetica Neue', sans-serif;
+    font-family: 'Whitney Book', sans-serif;
+    font-size: 0.9em
 } main code{
     background-color: #1e2124;
     font-size: 1.1em;
@@ -112,7 +113,7 @@ article{
 } article select{
     background-color: #1e2124;
     color: white;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Whitney Book', sans-serif;
     padding: 1rem;
     border-radius: 0.5rem;
     font-size: 0.9rem;
@@ -122,7 +123,7 @@ article{
 footer{
     margin: auto;
     text-align: center;
-    font-family:'Aldrich', Helvetica, sans-serif;
+    font-family:'Whitney Book', Helvetica, sans-serif;
     padding: 1.5em;
 } footer a{
     color: #ffffff;
@@ -133,8 +134,8 @@ footer{
 button{
     border: none;
     padding: 0.9rem;
-    font-size:1em;
-    font-family: 'JetBrains Mono', monospace;
+    font-size:1.1em;
+    font-family: 'Whitney Book', sans-serif;
     background-color: #1e2124;
     color: white;
     border-radius: 0.8rem;
@@ -153,7 +154,7 @@ button{
 #datepicker{
     background-color: #1e2124;
     color: white;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Whitney Book', sans-serif;
     padding: 1rem;
     border-radius: 0.5rem;
     font-size: 0.9rem;

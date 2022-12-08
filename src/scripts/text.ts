@@ -111,7 +111,7 @@ function lineFn(text: string): void {
     } else if(lineOn === true) {
         text = text.replace(/`/g, "")
         lineBtn.style.color = 'white';
-        textArea.style.fontFamily = "JetBrains Mono"
+        textArea.style.fontFamily = "Whitney Book"
         textArea.value = text
         lineOn = false
     }
@@ -126,9 +126,9 @@ function blockFn(text: string): void {
     } else if(blockOn === true) {
         text = text.replace(/```/g, "")
         blockBtn.style.color = 'white';
-        textArea.style.fontFamily = "JetBrains Mono"
         textArea.value = text
         blockOn = false
+        textArea.style.fontFamily = "Whitney Book"
     }
 }
 function slashFn(text: string): void {

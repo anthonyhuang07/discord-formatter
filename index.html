@@ -12,12 +12,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicons/site.webmanifest">
     <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link href="https://fonts.cdnfonts.com/css/whitney-2" rel="stylesheet">
     <meta name="apple-mobile-web-app-title" content="Discord Message Formatter">
     <meta name="application-name" content="Discord Message Formatter">
     <meta name="msapplication-TileColor" content="#ff7700">
@@ -31,7 +31,7 @@
             <h1><span class="date">Discord</span> Formatter!</h1>
         </div>
         <article>
-            <select id="dropdown" onchange="dropdown()">
+            <select id="dropdown" onchange="dropdown()" style="font-size: 1em;">
                 <option value="text">Regular Text</option>
                 <option value="color">Colored Text</option>
                 <option value="time">Timestamp</option>
@@ -68,8 +68,8 @@
                 <button type="button" id="blue" onclick="blueFn(textArea.value)" style="color: #287AB5;">Blue</button>
                 <button type="button" id="gray" onclick="grayFn(textArea.value)" style="color: #576D74;">Gray</button>
             </div>
-            <div id="timediv" style="display: none;">
-                <div style="display: flex; align-items: center;">
+            <div id="timediv" style="display: none; width: 75%;">
+                <div style="display: flex; align-items: center; justify-content: space-evenly;">
                     <div>
                         <h3>Short Time (t):</h3>
                         <code id="datet">HH:MM (AM/PM)</code>
